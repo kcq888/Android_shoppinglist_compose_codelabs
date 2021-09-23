@@ -1,0 +1,24 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2021-09-22T20:47:07-04:00",
+  "id": "Android_Study_Jams",
+  "duration": 0,
+  "title": "",
+  "authors": "Kevin Quan",
+  "summary": "Android Study JAMS Shopping List",
+  "source": "ShoppingList-Codelabs.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "android-study-jams"
+  ],
+  "tags": [
+    "beginner"
+  ],
+  "url": "Android_Study_Jams"
+}
