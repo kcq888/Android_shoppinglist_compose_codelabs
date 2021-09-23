@@ -103,6 +103,8 @@
       <google-codelab-step label="Task: Add image and string resources" duration="0">
         <p>Add the icon below to the drawable:</p>
 <p class="image-container"><img alt="check list icon" src="img/2d83f883c694de80.svg"></p>
+<p>Right clicked this image and save as check_document_done_list_paper.svg.</p>
+<p>On the project pane, locate drawerable package, right click on the package, New, and slect Vector Asset. In the asset dialog, select the local file (SVG, PSD) radiio button. In the name field, set the name to ic_check_document_done_list_paper and change the size to 40x40.</p>
 
 
       </google-codelab-step>
@@ -231,7 +233,7 @@ fun Drawer(
            verticalAlignment = Alignment.CenterVertically
        ) {
            Image(
-            painter = painterResource(R.drawable.ic__check_document_done_list_paper),
+            painter = painterResource(R.drawable.ic_check_document_done_list_paper),
             contentDescription = &#34;App icon&#34;)
             Text(stringResource(id = R.string.shoppinglist), fontSize = 28.sp)
        }
@@ -516,7 +518,7 @@ fun AddListScreen(modifier: Modifier = Modifier, viewModel: MainViewModel, navCo
             verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
-                painter = painterResource(R.drawable.ic__check_document_done_list_paper),
+                painter = painterResource(R.drawable.ic_check_document_done_list_paper),
                 contentDescription = &#34;App icon&#34;
             )
             Text(stringResource(id = R.string.additemtolist), fontSize = 24.sp)
@@ -590,7 +592,7 @@ fun AddListScreen(modifier: Modifier = Modifier, viewModel: MainViewModel, navCo
     
       <google-codelab-step label="Task: Create the common composable to display the list items" duration="0">
         <p>Both the Grocery and the Home Improvement screens display the list items. The list items consists of a checkbox, three Text UI component. They all are layout in the Row UI component horizontally. The checkbox is used to indicate that an item has been selected or complete in the list. We will create two composables to accomplish this. We will use the <a href="https://foso.github.io/Jetpack-Compose-Playground/foundation/lazycolumn/" target="_blank">LazyColumn</a> UI component to render the list. The LazyColumn is a vertically scrolling list and it is simular to the RecycleView widget. It only lays out the visible items. Hence, it reduces the memory usage and it perform well with a large list. The second composable is a Row with the each attributes of the list item.</p>
-<p>Create a new kotlin class, and replace the content with the following:</p>
+<p>Create a new kotlin class, and name it ShoppingList. Replace the content with the following:</p>
 <p>Shopping List:</p>
 <pre><code>@Composable
 fun ShoppingList(shoppingList: List&lt;ShoppingListItem&gt;, viewModel: MainViewModel) {
@@ -732,6 +734,24 @@ fun HomeImprovementScreen(modifier: Modifier = Modifier, viewModel: MainViewMode
         ShoppingList(items, viewModel)
     }
 }
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Task: Update AppShoppingList composable" duration="0">
+        <p>The view model needs to be updated to reflect the changes to the view model in previous step. When you compile the project, there are errors. Correct the errors and re-build.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Task: Correct TopAppBar title and Action button clicked" duration="0">
+        <p>In the Scaffold title property, remove the hard coded string and replace it with the following:</p>
+<p>The double !! is to allow access the nullable property.</p>
+<pre><code>currentScreen!!.title
+</code></pre>
+<p>In the TopAppBar action button&#39;s onClicked event lambda function, replace the TODO with the following:</p>
+<pre><code>viewmodel.delAll()
 </code></pre>
 <p>Build and run the app. You will see the finish application. One future feature that you can add is to make the list item editable. It is a challenge for you experienment. Good luck!</p>
 
